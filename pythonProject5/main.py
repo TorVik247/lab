@@ -1,21 +1,32 @@
 import math
 
-AGC=[0, 1, 1, 0, 0, 0,
+AG1=[0, 1, 1, 0, 0, 0,
      1, 0, 1, 1, 1, 0,
      1, 1, 0, 1, 1, 0,
      0, 1, 1, 0, 1, 1,
      0, 1, 1, 1, 0, 1,
      0, 0, 0, 1, 1, 0]
-
+AGG2=[0, 1, 1, 0, 0, 0,
+     1, 0, 1, 1, 1, 0,
+     1, 1, 0, 1, 1, 0,
+     0, 1, 1, 0, 1, 1,
+     0, 1, 1, 1, 0, 1,
+     0, 0, 0, 1, 1, 0]
 AGG=[]
-j=int(math.sqrt(len(AGC)))
+AG2=[0, 1, 1, 0, 0, 0,
+     1, 0, 1, 1, 1, 0,
+     1, 1, 0, 1, 1, 0,
+     0, 1, 1, 0, 1, 1,
+     0, 1, 1, 1, 0, 1,
+     0, 0, 0, 1, 1, 0]
+j=int(math.sqrt(len(AG1)))
 one=0
 c=0
 k=0
 
 
 while True:
-    if (AGC.count(0)<=j):
+    if (AGG2.count(0)<=j):
         break
     else:
         for o in range(j):
@@ -23,7 +34,7 @@ while True:
             six = 0
             while i < j:
                 while k < j - 1:
-                    c = (AGC[one] * AGC[six]) + c
+                    c = (AG1[one] * AG2[six]) + c
                     one = one + 1
                     six = six + j
                     k = k + 1
@@ -34,6 +45,10 @@ while True:
                 k = 0
                 i = i + 1
             one = one + j
+        for u in range((j*j)-1):
+            AG2.pop(u)
+            AG2.insert(u, AGG[u])
+        AGG.clear()
         one = 0
         c = 0
         k = 0
@@ -44,14 +59,13 @@ while True:
             if (p==six):
                 six+=j+1
                 continue
-            elif(AGC[p] == 0):
-                AGC.pop(p)
-                AGC.insert(p, AGG[p])
-        AGG.clear()
+            elif(AGG2[p] == 0):
+                AGG2.pop(p)
+                AGG2.insert(p, AG2[p])
 
-i=0#нема смисла виводити має бути   Матрицю відстаней
+i=0
 k=0
-for k in AGC:
+for k in AGG2:
     if i > j - 1:
         print()
         i=0
