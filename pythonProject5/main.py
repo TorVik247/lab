@@ -62,12 +62,22 @@ while True:
             elif(AGG2[p] == 0):
                 AGG2.pop(p)
                 AGG2.insert(p, AG2[p])
-
+rad=0
+dim=1
 i=0
 k=0
 for k in AGG2:
+    if (k>rad):
+        rad=k
+
     if i > j - 1:
         print()
         i=0
     print(k, end=" ")
     i=i+1
+print()
+print("Радіус -",dim )
+print("Діаметр -",rad)
+print("Цикломатичне число",int(AG1.count(1)/2)-j+1)
+if (AG1[::-1]==AG1[::]):
+    print("Неорієнтований Граф")
