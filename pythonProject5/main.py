@@ -30,7 +30,7 @@ for o in range(6):
         i=i+1
     one=one +j
 
-i=0
+i=0#нема смисла виводити має бути   Матрицю відстаней
 k=0
 for k in AG_:
     if i>j-1:
