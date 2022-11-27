@@ -27,7 +27,6 @@ while i<m:
         listOri.insert(ranOne,1)
         listPov.append(ranOne)
         listPov.append(ranSim)
-
     i=i+1
 
 print("Неорієнтований Граф")
@@ -39,7 +38,6 @@ for j in listSum:   #вивод
     i=i+1
 print()
 print("Орієнтований Граф")
-
 for j in listOri:   #вивод
     if i>n-1:
         print()
