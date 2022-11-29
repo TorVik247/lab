@@ -12,11 +12,11 @@ while i<(n ** 2):  #створює список нулів
     i=i+1
 i=0
 while i<m:
-    sim=random.randint(1,(7))
-    one=random.randint(1,(7))
-    ranSim=((sim-1)*8)+one
-    ranOne=(one*8)-1+sim
-    if (ranOne==0 or ranOne%9==0) or((listPov.count(ranOne)>0)or(listPov.count(ranSim)>0)): #щоб по діагоналі було порожньо + щоб числа не повторялись
+    sim=random.randint(1,(n-1))
+    one=random.randint(1,(n-1))
+    ranSim=((sim-1)*n)+one
+    ranOne=(one*n)-1+sim
+    if (ranOne==0 or ranOne%(n+1)==0) or((listPov.count(ranOne)>0)or(listPov.count(ranSim)>0)): #щоб по діагоналі було порожньо + щоб числа не повторялись
         continue
     else:
         listSum.pop(ranSim)
